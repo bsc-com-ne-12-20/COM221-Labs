@@ -1,31 +1,15 @@
-class Point{
-    private double xCoordinate;
-    private double yCcoordinate;
-
-    public Point(double xCoordinate, double yCcoordinate) {
-        this.xCoordinate = xCoordinate;
-        this.yCcoordinate = yCcoordinate;
+public class Point {
+    private double x;
+    private double y;
+    
+    public Point(double x, double y) {
+        this.x = x;
+        this.y = y;
     }
-
-    public double getxCoordinate() {
-        return xCoordinate;
-    }
-
-    public void setxCoordinate(double xCoordinate) {
-        this.xCoordinate = xCoordinate;
-    }
-
-    public double getyCcoordinate() {
-        return yCcoordinate;
-    }
-
-    public void setyCcoordinate(double yCcoordinate) {
-        this.yCcoordinate = yCcoordinate;
-    }    
-
-    public double distance(double yCcoordinate, double xCoordinate){
-        double distance = Math.sqrt(Math.pow((yCcoordinate - this.yCcoordinate),
-        2) + Math.pow((xCoordinate - this.xCoordinate), 2));
-        return distance;
+    
+    public double distance(Point other) {
+        double dx = other.x - this.x;
+        double dy = other.y - this.y;
+        return Math.sqrt(dx*dx + dy*dy);
     }
 }
